@@ -1,5 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html, body {
-    margin: 0;
+html,
+body {
+  margin: 0;
+  background-color: #e4e6ed;
+  font-family: "Roboto", sans-serif;
+}
+
+.font-weight-normal {
+  font-weight: normal;
+}
+
+.brown-text {
+  color: #b5a197;
 }
