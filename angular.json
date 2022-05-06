@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "hackathon-angular:build:production",
+            "firebaseProject": "hackathon-66abb",
+            "firebaseHostingSite": "hackathon-66abb"
+          }
         }
       }
     }

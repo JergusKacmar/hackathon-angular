@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "hackathon-66abb": {
+      "hosting": {
+        "hackathon-angular": [
+          "hackathon-66abb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "hackathon-66abb"
+  }
+}
