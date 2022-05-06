@@ -34,3 +34,42 @@
   left: -25%;
   top: -240px;
 }
+
+#bottom-wave-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+#bottomwave {
+  position: absolute;
+  bottom: 1px;
+  height: 40px;
+  width: 600px;
+  background: #F8CF2C;
+}
+
+#bottomwave:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  background-color: white;
+  left: -25%;
+  bottom: 20px;
+}
+
+#bottomwave:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  background-color: #F8CF2C;
+  right: -25%;
+  bottom: -240px;
+}
+
