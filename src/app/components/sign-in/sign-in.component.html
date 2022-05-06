@@ -1,39 +1,10 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign In</h3>
-      <div class="formGroup">
-        <input
-          type="text"
-          class="formControl"
-          placeholder="Username"
-          #userName
-          required
-        />
-      </div>
-      <div class="formGroup">
-        <input
-          type="password"
-          class="formControl"
-          placeholder="Password"
-          #userPassword
-          required
-        />
-      </div>
-      <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
-        <input
-          type="button"
-          class="btn btnPrimary"
-          value="Log in"
-          (click)="authService.SignIn(userName.value, userPassword.value)"
-        />
-      </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
+<div fxLayout="column" fxLayoutAlign="space-around center" class="displayTable">
+  <div fxLayout="column" class="displayTableCell">
+    <div fxLayout="column" class="authBlock">
+      <h3 class="authBlockSignIn">Sign In</h3>
       <!-- Calling GoogleAuth Api from AuthService -->
-      <div class="formGroup">
+      <div fxLayout="row" fxLayoutAlign="center center" class="formGroup">
+        <img src="/assets/google-svgrepo-com 1.svg" alt="" class="googleImg" />
         <button
           type="button"
           class="btn googleBtn"
