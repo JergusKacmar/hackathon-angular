@@ -13,7 +13,7 @@ export class JobListComponent implements OnInit {
   constructor(public jobService: JobService, private router: Router) {}
   ngOnInit() {
     this.jobService.getAll().valueChanges().subscribe((jobs) => {
-      this.jobs = jobs
+      this.jobs = jobs.reverse();
     });
   }
 }
