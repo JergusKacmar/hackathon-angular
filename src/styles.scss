@@ -1,3 +1,6 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
@@ -17,3 +20,121 @@ body {
 .brown-text {
   color: #b5a197;
 }
+
+.ua-blue {
+  color: #2367b1;
+}
+
+.ua-blue-bg {
+  background-color: #2367b1;
+}
+
+$color-primary-pellet: (
+	100: #dfeffb,
+	200: #c8e5fb,
+	300: #90caf8,
+	400: #58b0f5,
+	500: #2367b1,
+	600: #0e8aec,
+	// 600-900 colors not from design but generated to make material pallet
+	700: #0c7cd4,
+	800: #0b6ebc,
+	900: #0a60a3,
+	contrast: (
+		100: #000000,
+		200: #000000,
+		300: #000000,
+		400: #000000,
+		500: #ffffff,
+		600: #ffffff,
+		700: #ffffff,
+		800: #ffffff,
+		900: #ffffff,
+	),
+);
+
+// generated from secondary-green
+$color-accent-pellet: (
+	50: #e7f8eb,
+	100: #c2eecd,
+	200: #9ae3ac,
+	300: #72d88b,
+	400: #53cf72,
+	500: #35c759,
+	600: #30c151,
+	700: #28ba48,
+	800: #22b33e,
+	900: #16a62e,
+	A100: #daffdf,
+	A200: #a7ffb3,
+	A400: #74ff87,
+	A700: #5aff71,
+	contrast: (
+		50: #000000,
+		100: #000000,
+		200: #000000,
+		300: #000000,
+		400: #000000,
+		500: #ffffff,
+		600: #ffffff,
+		700: #ffffff,
+		800: #ffffff,
+		900: #ffffff,
+		A100: #000000,
+		A200: #000000,
+		A400: #ffffff,
+		A700: #ffffff,
+	),
+);
+
+// generated from secondary-red
+$color-warn-pellet: (
+	50: #ffe8e9,
+	100: #fec5c8,
+	200: #fe9ea3,
+	300: #fd777e,
+	400: #fc5a63,
+	500: #fc3d47,
+	600: #fc3740,
+	700: #fb2f37,
+	800: #fb272f,
+	900: #fa1a20,
+	A100: #ffffff,
+	A200: #fff9f9,
+	A400: #ffc6c7,
+	A700: #ffadae,
+	contrast: (
+		50: #000000,
+		100: #000000,
+		200: #000000,
+		300: #000000,
+		400: #000000,
+		500: #ffffff,
+		600: #ffffff,
+		700: #ffffff,
+		800: #ffffff,
+		900: #ffffff,
+		A100: #000000,
+		A200: #000000,
+		A400: #000000,
+		A700: #000000,
+	),
+);
+
+// material
+
+$light-primary: mat.define-palette($color-primary-pellet);
+$light-accent: mat.define-palette($color-accent-pellet);
+$light-warn: mat.define-palette($color-warn-pellet);
+
+// define theme
+$mat-theming-light: mat.define-light-theme(
+	(
+		color: (
+			primary: $light-primary,
+			accent: $light-accent,
+			warn: $light-warn,
+		),
+	)
+);
+@include mat.all-component-themes($mat-theming-light);

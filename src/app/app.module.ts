@@ -15,6 +15,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { EmployerRegistrationComponent } from './components/employer-registration/employer-registration.component';
 
 // routing
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +24,18 @@ import { AppRoutingModule } from './app-routing.module';
 // service
 import { AuthService } from './shared/services/auth.service';
 
+// pipes
+import { SplitPipe } from './pipes/split.pipe';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatMenuModule } from '@angular/material/menu';
+import { IncludesPipe } from './pipes/inlcudes.pipe';
 
 @NgModule({
   declarations: [
@@ -32,8 +45,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
+    SplitPipe,
+    UserRegistrationComponent,
+    EmployerRegistrationComponent,
+    IncludesPipe
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
@@ -42,8 +60,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AngularFireDatabaseModule,
     AppRoutingModule,
     FlexLayoutModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatChipsModule,
+    MatMenuModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, SplitPipe, IncludesPipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,39 +1,6 @@
-html,
-body {
-  height: 100%;
+.text {
+  display: block;
+  width: 331px;
+  margin: 1rem auto;
 }
-.displayTable {
-  background-color: #e4e6ed;
-  height: 100vh;
-}
-.displayTableCell {
-  text-align: center;
-}
-.authBlock {
-  text-align: center;
-}
-.authBlockSignIn {
-  margin: 0;
-  padding: 30px 0px;
-}
-.googleBtn {
-  border: none;
-  background-color: transparent;
-  font-size: 1rem;
-}
-.googleImg {
-  width: 30px;
-  width: 30px;
-  padding: 0px 20px;
-}
-.formGroup {
-  background: rgba(255, 255, 255, 0.83);
-  border-radius: 7px;
-  border: none;
-  width: 307px;
-  height: 55px;
-}
-.forgotPassword {
-  padding: 20px 0px;
-  color: #a3a3a3;
-}
+
