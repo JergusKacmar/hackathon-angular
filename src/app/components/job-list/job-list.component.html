@@ -66,8 +66,8 @@
       </div>
       <img src="assets/images/rating.svg" />
       <div class="p-4 flex flex-row flex-wrap gap-2">
-        <span class="border-orange-300 border-4 p-2 rounded-xl">full-time</span
-        ><span class="border-orange-300 border-4 p-2 rounded-xl">remote</span>
+        <span class="border-orange-300 border-4 p-2 rounded-xl" *ngFor="let category of job.category">{{category}}</span
+        >
       </div>
       <button
         class="ua-blue-bg py-4 px-6 rounded-3xl w-fit text-white mb-6"
