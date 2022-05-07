@@ -42,6 +42,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { JobListComponent } from './components/job-list/job-list.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { ActivatedRoute } from '@angular/router';
 
 @NgModule({
   declarations: [

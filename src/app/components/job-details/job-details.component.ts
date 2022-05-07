@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Job } from 'src/app/shared/services/job';
 import { JobService } from 'src/app/shared/services/jobs.service';
 
@@ -10,11 +10,11 @@ import { JobService } from 'src/app/shared/services/jobs.service';
 })
 export class JobDetailsComponent implements OnInit {
   job?: Job;
-  constructor(public jobService: JobService, private route: ActivatedRouteSnapshot) {}
+  constructor(public jobService: JobService, private route: ActivatedRoute) {}
   ngOnInit() {
     console.log(this.route);
     this.jobService.getAll().valueChanges().subscribe((jobs) => {
-      this.job = jobs.find((job) => job.title === '');
+      this.job = jobs.find((job) => job.title === this.route.snapshot.params['id']);
     });
   }
 }

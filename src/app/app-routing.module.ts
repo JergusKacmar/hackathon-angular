@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { MapComponent } from './components/map/map.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -14,7 +14,7 @@ import { JobListComponent } from './components/job-list/job-list.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
-  { path: 'detail/:id', component: JobDetailsComponent},
+  { path: 'job-detail/:id', component: JobDetailsComponent},
   { path: 'mapicka', component: MapComponent },
   { path: 'sign-in', component: SignInComponent },
   {
