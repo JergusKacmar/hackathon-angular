@@ -36,6 +36,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatMenuModule } from '@angular/material/menu';
 import { IncludesPipe } from './pipes/inlcudes.pipe';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { IncludesPipe } from './pipes/inlcudes.pipe';
     SplitPipe,
     UserRegistrationComponent,
     EmployerRegistrationComponent,
-    IncludesPipe
+    IncludesPipe,
+    ChatComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -66,6 +68,7 @@ import { IncludesPipe } from './pipes/inlcudes.pipe';
     MatInputModule,
     MatChipsModule,
     MatMenuModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthService, SplitPipe, IncludesPipe],
   bootstrap: [AppComponent],

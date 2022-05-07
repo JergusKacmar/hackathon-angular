@@ -9,6 +9,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { AuthGuard } from './shared/guard/auth.guard';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { EmployerRegistrationComponent } from './components/employer-registration/employer-registration.component';
+import { ChatComponent } from './components/chat/chat.component';
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     component: EmployerRegistrationComponent,
     canActivate: [AuthGuard],
   },
+  { path: 'chat', component: ChatComponent },
 
   {
     path: 'dashboard',

@@ -1,0 +1,23 @@
+<div id="chat">
+  <ul id="messages">
+    <li
+      *ngFor="let msg of messages"
+      class="{{
+        authService.userData.displayName === msg.username ? 'sent' : 'receive'
+      }} shadow-lg"
+    >
+      <span>{{ msg.username }}: <br /></span>{{ msg.message }}
+    </li>
+  </ul>
+
+  <!-- form to send message -->
+  <form
+    id="message-form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="flex gap-2 justify-evenly items-center"
+  >
+    <input id="message-input" type="text" formControlName="message" />
+    <button id="message-btn" type="submit">Send</button>
+  </form>
+</div>

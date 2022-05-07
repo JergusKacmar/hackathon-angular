@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+}
+
+button {
+  background-color: rgb(54, 104, 174);
+  border-radius: 15px;
+}
+
+// #messages {
+//   padding-bottom: 30%;
+// }
+
+li {
+  list-style-type: none;
+  margin-bottom: 10px;
+  background-color: rgb(54, 104, 174);
+  padding: 5px;
+  border-radius: 10px;
+  color: rgb(228, 230, 236);
+  width: 50%;
+}
+
+li span {
+  font-style: italic;
+  font-weight: bolder;
+  color: rgb(241, 206, 82);
+}
+
+#chat {
+  width: 90%;
+  margin: auto;
+}
+
+#message-form {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(241, 206, 82);
+}
+
+input {
+  width: 65%;
+  height: 30px;
+}
+
+button {
+  width: 25%;
+  height: 38px;
+}
+
+.sent {
+  text-align: right;
+  background-color: rgb(241, 206, 82);
+  color: black;
+  margin-left: 50%;
+}
+
+.sent span {
+  margin-left: 5px;
+  color: rgb(241, 206, 82);
+  color: rgb(54, 104, 174);
+}
