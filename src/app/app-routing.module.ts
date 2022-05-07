@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { MapComponent } from './components/map/map.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
@@ -10,6 +11,7 @@ import { AuthGuard } from './shared/guard/auth.guard';
 import { ChatComponent } from './components/chat/chat.component';
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: 'mapicka', component: MapComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'register-user', component: SignUpComponent },
