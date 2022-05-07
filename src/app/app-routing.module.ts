@@ -7,9 +7,11 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 // route guard
 import { AuthGuard } from './shared/guard/auth.guard';
+import { ChatComponent } from './components/chat/chat.component';
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
+  { path: 'chat', component: ChatComponent },
   { path: 'register-user', component: SignUpComponent },
   {
     path: 'dashboard',
