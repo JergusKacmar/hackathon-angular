@@ -23,6 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './shared/services/auth.service';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ChatComponent } from './components/chat/chat.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AngularFireDatabaseModule,
     AppRoutingModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
