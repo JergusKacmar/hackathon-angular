@@ -10,7 +10,13 @@ import { AuthService } from '../../shared/services/auth.service';
 export class EmployerRegistrationComponent implements OnInit {
   typesOfJob = TypesOfJob;
   profileForm = new FormGroup({
-    preferredLanguage: new FormControl(''),
+    legalRelation: new FormControl(''),
+    name: new FormControl(''),
+    description: new FormControl(''),
+    duration: new FormControl(''),
+    location: new FormControl(''),
+    payment: new FormControl(''),
+    expiration: new FormControl(''),
     phoneNumber: new FormControl(''),
     specialization: new FormControl([]),
   });

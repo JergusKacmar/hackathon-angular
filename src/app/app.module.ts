@@ -37,6 +37,11 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatMenuModule } from '@angular/material/menu';
 import { IncludesPipe } from './pipes/inlcudes.pipe';
 import { ChatComponent } from './components/chat/chat.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { JobListComponent } from './components/job-list/job-list.component';
+import { JobDetailsComponent } from './components/job-details/job-details.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +56,8 @@ import { ChatComponent } from './components/chat/chat.component';
     EmployerRegistrationComponent,
     IncludesPipe,
     ChatComponent,
+    JobListComponent,
+    JobDetailsComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -69,8 +76,11 @@ import { ChatComponent } from './components/chat/chat.component';
     MatChipsModule,
     MatMenuModule,
     ReactiveFormsModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [AuthService, SplitPipe, IncludesPipe],
+  providers: [AuthService, SplitPipe, IncludesPipe, MatDatepickerModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

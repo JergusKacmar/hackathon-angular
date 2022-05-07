@@ -5,6 +5,47 @@
     class="flex flex-col gap-4 w-[331px] items-center"
   >
     <mat-form-field appearance="fill">
+      <mat-label class="text-gray-500">Telefónne číslo</mat-label>
+      <input matInput formControlName="phoneNumber" />
+    </mat-form-field>
+
+    <mat-radio-group
+      aria-label="Select an option"
+      formControlName="legalRelation"
+      class="flex gap-4"
+    >
+      <mat-radio-button value="Právnická osoba"
+        >Právnická osoba</mat-radio-button
+      >
+      <mat-radio-button value="Fyzická osoba">Fyzická osoba</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="fill">
+      <mat-label class="text-gray-500">Telefónne číslo</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Popis prace</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label class="text-gray-500">Trvanie</mat-label>
+      <input matInput formControlName="duration" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label class="text-gray-500">Geolokácia</mat-label>
+      <input matInput formControlName="location" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label class="text-gray-500">Platba</mat-label>
+      <input matInput formControlName="payment" />
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="fill">
       <mat-label class="text-gray-500">Preferujúci jazyk</mat-label>
       <mat-select formControlName="preferredLanguage">
         <mat-option value="Začiatočník">Začiatočník</mat-option>
@@ -12,19 +53,13 @@
         <mat-option value="Stredne pokročilý">Stredne pokročilý</mat-option>
         <mat-option value="Expert">Expert</mat-option>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field> -->
 
     <mat-form-field appearance="fill">
-      <mat-label class="text-gray-500">Telefónne číslo</mat-label>
-      <input matInput formControlName="phoneNumber" />
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label class="text-gray-500">Špecialita</mat-label>
-      <mat-select formControlName="specialization" multiple="">
-        <mat-option value="option1">1</mat-option>
-        <mat-option value="option2">2</mat-option>
-      </mat-select>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="expiration" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <div class="w-full">
