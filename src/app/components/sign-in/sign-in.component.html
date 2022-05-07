@@ -1,32 +1,20 @@
-<div fxLayout="column" fxLayoutAlign="space-around center" class="displayTable">
-  <div fxLayout="column" class="displayTableCell">
-    <div fxLayout="column" class="authBlock">
-      <h3 class="authBlockSignIn">Sign In</h3>
-      <!-- Calling GoogleAuth Api from AuthService -->
-      <div fxLayout="row" fxLayoutAlign="center center" class="formGroup">
-        <img src="/assets/google-svgrepo-com 1.svg" alt="" class="googleImg" />
-        <button
-          type="button"
-          class="btn googleBtn"
-          (click)="authService.GoogleAuth()"
-        >
-          <i class="fab fa-google-plus-g"></i>
-          Log in with Google
-        </button>
-      </div>
-      <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
-      </div>
-    </div>
-    <div class="redirectToLogin">
-      <span
-        >Don't have an account?<span
-          class="redirect"
-          routerLink="/register-user"
-        >
-          Sign Up</span
-        ></span
-      >
-    </div>
-  </div>
+<img class="m-auto" src="assets/images/teta.svg" alt="My Happy SVG" />
+
+<div class="text">
+  <h2 class="font-normal text-2xl mt-4 mb-2">
+    Si z Ukrajiny a hľadáš prácu v Košickom kraji?
+  </h2>
+
+  <p class="brown-text text-lg">
+    Pomocou mapy Košice a našého chatbota si ľahko nájdeš vyhovujúcu pozíciu pre
+    teba
+  </p>
+
+  <button
+    type="button"
+    class="my-8 mx-auto block"
+    (click)="authService.GoogleAuth()"
+  >
+      <img src="assets/images/login-button.svg">
+  </button>
 </div>

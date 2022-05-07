@@ -1,0 +1,70 @@
+<!-- Show user data when logged in -->
+<div class="flex flex-col justify-evenly items-center gap-8 text-black">
+  <form
+    [formGroup]="profileForm"
+    class="flex flex-col gap-4 w-[331px] items-center"
+  >
+    <mat-form-field appearance="fill">
+      <mat-label class="text-gray-500">Preferujúci jazyk</mat-label>
+      <mat-select formControlName="preferredLanguage">
+        <mat-option value="Začiatočník">Začiatočník</mat-option>
+        <mat-option value="Mierne pokročilý">Mierne pokročilý</mat-option>
+        <mat-option value="Stredne pokročilý">Stredne pokročilý</mat-option>
+        <mat-option value="Expert">Expert</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label class="text-gray-500">Telefónne číslo</mat-label>
+      <input matInput formControlName="phoneNumber" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label class="text-gray-500">Špecialita</mat-label>
+      <mat-select formControlName="specialization" multiple="">
+        <mat-option value="option1">1</mat-option>
+        <mat-option value="option2">2</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="w-full">
+      <mat-label class="text-gray-500 pl-3">Špecialita</mat-label>
+    </div>
+    <mat-chip-list>
+      <mat-chip
+        *ngFor="let specialization of specialization.value"
+        class="yellow-background"
+        (click)="removeSpecialization(specialization)"
+      >
+        {{ specialization }}
+      </mat-chip>
+      <span
+        [matMenuTriggerFor]="menu"
+        class="bg-white rounded-[40px] w-[40px] h-[40px] text-[2rem] text-center leading-[38px] cursor-pointer select-none"
+        >+</span
+      >
+    </mat-chip-list>
+
+    <mat-menu #menu="matMenu">
+      <mat-chip-list>
+        <mat-chip
+          [ngClass]="{
+            'yellow-background': specialization.value | includes: spec
+          }"
+          *ngFor="let spec of typesOfJob"
+          (click)="addOrRemoveSpecialization(spec); $event.stopPropagation()"
+        >
+          {{ spec }}
+        </mat-chip>
+      </mat-chip-list>
+      <button mat-menu-item><div class="text-center">Zavri</div></button>
+    </mat-menu>
+
+    <button
+      class="ua-blue-bg py-6 px-10 rounded-3xl w-fit text-white"
+      (click)="saveForm()"
+    >
+      Uložiť
+    </button>
+  </form>
+</div>

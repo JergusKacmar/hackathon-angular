@@ -44,6 +44,7 @@ export class ChatComponent implements OnInit {
       this.form.get('message').value,
       this.authService.userData.displayName
     );
+    this.form.get('message').setValue('');
   }
 
   retrieveMessages(): void {

@@ -1,0 +1,41 @@
+::ng-deep .mat-form-field-underline {
+  box-shadow: 2px 2px 3px 1px #888888;
+}
+
+::ng-deep input.mat-input-element,
+.mat-select-value {
+  color: black !important;
+}
+
+::ng-deep .mat-select-value,
+input {
+  color: rgb(107 114 128) !important;
+}
+
+::ng-deep .mat-select-arrow {
+  color: #2367b1;
+}
+
+::ng-deep .mat-form-field-wrapper,
+::ng-deep .mat-form-field-flex {
+  background-color: transparent !important;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+::ng-deep .mat-form-field-ripple,
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: white !important;
+}
+
+::ng-deep #cdk-overlay-0 {
+  position: static;
+  margin: auto;
+}
+
+.yellow-background {
+  background: #f8cf2c !important;
+  background-color: #f8cf2c !important;
+}
