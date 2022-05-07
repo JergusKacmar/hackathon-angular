@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TypesOfJob } from 'src/app/models/types-of-jobs.model';
+import { Job } from 'src/app/shared/services/job';
+import { JobService } from 'src/app/shared/services/jobs.service';
 import { AuthService } from '../../shared/services/auth.service';
 @Component({
   selector: 'app-user-registration',
@@ -8,7 +11,7 @@ import { AuthService } from '../../shared/services/auth.service';
   styleUrls: ['./user-registration.component.scss'],
 })
 export class UserRegistrationComponent implements OnInit {
-  typesOfJob = TypesOfJob
+  typesOfJob = TypesOfJob;
   profileForm = new FormGroup({
     preferredLanguage: new FormControl(''),
     slovakLevel: new FormControl(''),
@@ -20,15 +23,19 @@ export class UserRegistrationComponent implements OnInit {
   get specialization(): AbstractControl {
     return this.profileForm.get('specialization') as AbstractControl;
   }
-  constructor(public authService: AuthService) {}
+  constructor(public jobService: JobService, private router: Router) {}
   ngOnInit(): void {}
 
   saveForm(): void {
     console.log({
       preferredLanguage: this.profileForm.controls['preferredLanguage'].value,
+      slovakLevel: this.profileForm.controls['slovakLevel'].value,
+      ukrainianLevel: this.profileForm.controls['ukrainianLevel'].value,
+      englishLevel: this.profileForm.controls['ukrainianLevel'].value,
       phoneNumber: this.profileForm.controls['phoneNumber'].value,
       specialization: this.profileForm.controls['specialization'].value,
     });
+    this.router.navigateByUrl('job-list')
   }
 
   addOrRemoveSpecialization(e: string): void {

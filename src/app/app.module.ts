@@ -78,7 +78,7 @@ import { JobDetailsComponent } from './components/job-details/job-details.compon
     ReactiveFormsModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule,
+    MatNativeDateModule
   ],
   providers: [AuthService, SplitPipe, IncludesPipe, MatDatepickerModule],
   bootstrap: [AppComponent],

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TypesOfJob } from 'src/app/models/types-of-jobs.model';
-import { AuthService } from '../../shared/services/auth.service';
+import { Job } from 'src/app/shared/services/job';
+import { JobService } from 'src/app/shared/services/jobs.service';
 @Component({
   selector: 'app-employer-registration',
   templateUrl: './employer-registration.component.html',
@@ -24,15 +26,29 @@ export class EmployerRegistrationComponent implements OnInit {
   get specialization(): AbstractControl {
     return this.profileForm.get('specialization') as AbstractControl;
   }
-  constructor(public authService: AuthService) {}
+  constructor(public jobService: JobService, private router: Router) {}
   ngOnInit(): void {}
 
   saveForm(): void {
     console.log({
-      preferredLanguage: this.profileForm.controls['preferredLanguage'].value,
       phoneNumber: this.profileForm.controls['phoneNumber'].value,
       specialization: this.profileForm.controls['specialization'].value,
     });
+    this.jobService.create({
+      phoneNumber: this.profileForm.controls['phoneNumber'].value,
+      category: this.profileForm.controls['specialization'].value,
+      payment: this.profileForm.controls['payment'].value,
+      title: this.profileForm.controls['name'].value,
+      advertState: 'open',
+      description: this.profileForm.controls['description'].value,
+      expireOn: this.profileForm.controls['expiration'].value,
+      duration: this.profileForm.controls['duration'].value,
+
+    } as Job)
+
+
+
+    this.router.navigateByUrl('job-list')
   }
 
   addOrRemoveSpecialization(e: string): void {

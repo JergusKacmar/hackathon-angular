@@ -14,6 +14,7 @@ import { JobListComponent } from './components/job-list/job-list.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
 const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: 'detail/:id', component: JobDetailsComponent},
   { path: 'mapicka', component: MapComponent },
   { path: 'sign-in', component: SignInComponent },
   {
@@ -28,7 +29,6 @@ const routes: Routes = [
   },
   { path: 'chat', component: ChatComponent },
   { path: 'job-list', component: JobListComponent },
-  { path: 'job-detail', component: JobDetailsComponent},
   {
     path: 'dashboard',
     component: DashboardComponent,

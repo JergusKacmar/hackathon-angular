@@ -1,35 +1,81 @@
 <div class="flex flex-col justify-center items-center gap-4">
   <div class="flex flex-col gap-16 mb-6">
     <div class="flex flex-row justify-between">
-      <button><img src="assets/images/hamburger.svg" class="cursor-pointer" /></button>
-      <button routerLink="/mapicka"><img src="assets/images/geoBtn.svg" class="cursor-pointer" /></button>
+      <button>
+        <img src="assets/images/hamburger.svg" class="cursor-pointer" />
+      </button>
+      <button routerLink="/mapicka">
+        <img src="assets/images/geoBtn.svg" class="cursor-pointer" />
+      </button>
     </div>
-    <img src="assets/images/searchBar.svg" class=" cursor-text" />
+    <img src="assets/images/searchBar.svg" class="cursor-text" />
   </div>
 
   <span>Odporúčané ponuky</span>
 
-  <div
-    class="w-[331px] rounded-lg bg-white shadow-xl flex flex-col gap-3 justify-center items-center"
-  >
+  <ng-container *ngIf="jobs; then data; else noData"></ng-container>
+  <ng-template #noData>
     <div
-      class="block w-[60px] h-[60px] m-auto bg-cyan-600 text-white text-center leading-[3.75rem] mb-4 mt-6"
+      class="w-[331px] rounded-lg bg-white shadow-xl flex flex-col gap-3 justify-center items-center"
     >
-      Logo
-    </div>
-    <div class="flex flex-col items-center">
-      <span>Pozícia</span>
-      <span class="flex flex-row gap-1 ua-blue"
-        ><img src="assets/images/geoMarker.svg" class="w-6 h-6" />Location</span
+      <div
+        class="block w-[60px] h-[60px] m-auto bg-cyan-600 text-white text-center leading-[3.75rem] mb-4 mt-6"
       >
+        Logo
+      </div>
+      <div class="flex flex-col items-center">
+        <span>Pozícia</span>
+        <span class="flex flex-row gap-1 ua-blue"
+          ><img
+            src="assets/images/geoMarker.svg"
+            class="w-6 h-6"
+          />Location</span
+        >
+      </div>
+      <img src="assets/images/rating.svg" />
+      <div class="p-4 flex flex-row flex-wrap gap-2">
+        <span class="border-orange-300 border-4 p-2 rounded-xl">full-time</span
+        ><span class="border-orange-300 border-4 p-2 rounded-xl">remote</span>
+      </div>
+      <button
+        class="ua-blue-bg py-4 px-6 rounded-3xl w-fit text-white mb-6"
+        routerLink="/job-detail"
+      >
+        Zistiť viac
+      </button>
     </div>
-    <img src="assets/images/rating.svg" />
-    <div class="p-4 flex flex-row flex-wrap gap-2">
-      <span class="border-orange-300 border-4 p-2 rounded-xl">full-time</span
-      ><span class="border-orange-300 border-4 p-2 rounded-xl">remote</span>
+  </ng-template>
+  <ng-template #data>
+    <div
+      *ngFor="let job of jobs"
+      class="w-[331px] rounded-lg bg-white shadow-xl flex flex-col gap-3 justify-center items-center"
+    >
+      <div
+        class="block w-[60px] h-[60px] m-auto bg-cyan-600 text-white text-center leading-[3.75rem] mb-4 mt-6"
+      >
+        Logo
+      </div>
+      <div class="flex flex-col items-center">
+        <span>{{ job.title }}</span>
+        <span class="flex flex-row gap-1 ua-blue"
+          ><img
+            src="assets/images/geoMarker.svg"
+            class="w-6 h-6"
+          />Location</span
+        >
+      </div>
+      <img src="assets/images/rating.svg" />
+      <div class="p-4 flex flex-row flex-wrap gap-2">
+        <span class="border-orange-300 border-4 p-2 rounded-xl">full-time</span
+        ><span class="border-orange-300 border-4 p-2 rounded-xl">remote</span>
+      </div>
+      <button
+        class="ua-blue-bg py-4 px-6 rounded-3xl w-fit text-white mb-6"
+        [routerLink]="['/job-detail', job.title]"
+      >
+        {{ job | json }}
+        Zistiť viac
+      </button>
     </div>
-    <button class="ua-blue-bg py-4 px-6 rounded-3xl w-fit text-white mb-6" routerLink="/job-detail">
-      Zistiť viac
-    </button>
-  </div>
+  </ng-template>
 </div>
