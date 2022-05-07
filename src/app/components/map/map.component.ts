@@ -82,10 +82,16 @@ export class MapComponent implements AfterViewInit {
         };
 
         data.forEach((job) => {
-          const markerObj = L.marker([job.geoLat, job.geoLon], icon)
-            .bindPopup(job.title)
-            .addTo(this.mapicka);
+          if (job.geoLat && job.geoLon) {
+            L.marker([job.geoLat, job.geoLon], icon)
+              .bindPopup(job.title)
+              .addTo(this.mapicka);
+          }
         });
+
+        L.marker([48.71365, 21.25663], icon)
+          .bindPopup('You are here')
+          .addTo(this.mapicka);
 
         tiles.addTo(this.mapicka);
       });
